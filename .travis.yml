@@ -13,30 +13,16 @@ matrix:
       python: 3.7
       env:
         - DOCS="true"
-        # TODO: Doctr deploy key
-        #       * Run `tox -e run-cmd -- doctr configure --no-upload-key --no-authenticate --keypath docs/doctr_deploy_key`
-        #       * Follow doctr's instructions regarding setting up the deploy key on Github
-        #       * Replace the "secure: ..." line below with the "secure" line printed by doctr
-        # - secure: ...
-        # TODO: Environment variables for deployment of documentation artifacts to Bintray
-        #       * Set up a Bintray repo and package (preferably mirroring the username/repo name on Github
-        #       * Uncomment lines and set values for:
-        #           * BINTRAY_USER - The username for the Bintray account
-        #           * BINTRAY_SUBJECT - The "subject" (user name or organization name) hosting the package
-        #           * BINTRAY_REPO - The "repo" on Bintray (should match the git repo name)
-        #           * BINTRAY_PACKAGE - The "package" on Bintray (should also match the git repo name)
-        #       * run `tox -e run-travis-encrypt`
-        #       * paste in e.g. "BINTRAY_TOKEN=0a23802f7c9907f9087e37f21346a3a2805feb1a" when prompted for "Password"
-        #       * replace the "secure: ..." information below with the "secure" information printed by travis-encrypt
-        # - BINTRAY_USER=goerz-testing
-        # - BINTRAY_SUBJECT=goerz-testing
-        # - BINTRAY_REPO=pypkg_bintray_02
-        # - BINTRAY_PACKAGE=pypkg_bintray_02
-        # # BINTRAY_TOKEN
-        # - secure: ...
+        # Doctr deploy key
+        - secure: "GjlFTJYQnaf447j5tfQIkNgAWC0fEPvoBUFukLy0bfSnn/S21bxcLNeLNN3GDIqvZ7Ih48a+z7/+aPZ6kQPa49GysLvaTu59wkCFbbPZ9e3tDUmjvjn+EfKFASc8BjU0+bjyQCAtzuahDiqpc9qpKLh4CoVIXr/9QWSQqepWsjWcO6NI6Nx/wged0bO1bgB/LzCUwStMKs+68uyoU4cb/ApCV9BlZ9JRP8bWNDrqjRlPw+gxKxVswpVMCn3SwP3g3yrwTjVGoLlez8bguA/BkcCVagFwxvb41MMygonV2tbwTD1tHfNCO5eN00+mpxOQq3HW2o/vhjb/5xXvwB8aicd5yV0n4MyZ9mYYkcGe8WJS/p4dLs6atBsHrqJ0KzBZnhvb7f9AQEzRvDBTepv2LOxhArEcBjUd6Oqou6Gj3nijSvnSaZ1fRBCRgGgetDH9ym20zRfqv2LO3WV+s57H/mgjDafIYrORHA22X4m1Cl04Fjjgv71Del7TQBycAcNlXq9ZZw3ij059LCUL8btgHVp3g1Sl/5spPQIn7GnebcWwbT3gIScHdNL8quSdDYJBOiuRICC4ZuuurjB49TpwHrJtOs/EGQtN/xOPlbznfsdq2qBHyT7+LvfqtucoR4uICFUMz3aDP56K8vhERMvjQMw6zzw4LLEStU7N7DcNKNA="
+        - BINTRAY_USER=goerz
+        - BINTRAY_SUBJECT=goerz-testing
+        - BINTRAY_REPO=pypkg_bintray_02
+        - BINTRAY_PACKAGE=pypkg_bintray_02
+        # BINTRAY_TOKEN
+        - secure: IFL+OY9RrmlSUtfmDhcYJQ1eFhJuXlglSLoWTdD2smwypSzUY9u9i9Mhwpc7cT0qtzBR1UKj5LrBrzxAF8biZODc3nLQu1qjdJcae8ZqSOuO0LFWON4uHIzKkzxXWtJtmv10HpnlYObXclHNVmbmfkhjVKao2+E1aJ5UtL8Ud4SVVt1YffFFbrPTXxhyXJJqZ/3srXhBT+tIJGEbwYrTRUggXVcJ1KjSc8fdBSfYveddC4i9hZR/1mRL33nESCoGD/vFy3PyBSws1nKQdkkTxBp5Uf5bfVljFLJEbknH9kdOk+M5BvzKfz/S6h92VYL+s1bpFTVRwfFjFTloMAQCxoZWFjCOKEuxADaLhPIYziD8mJc1JGCliETyozkbs0/iJiyF5rkGj4saAHVLktabQjYRIbi/BArEkdbJ3+raOyFPI91/b6IqlCT6YjIlXMYDsjP1/qBJo+LU/RLKxEl++h9NlLyp0sxxBV8lF7Y+TC3k+F77iUKaDncLH0boFql4odEvAC1tcrl6iBs6r9isQiOiIkKXUf4FH/CNZzrD9NQqlzeLNFmgXl210FttL1O1MZbB0fzEFvqNl7z1S20eRWGSvb2Sf3GeJJMPOM1NwYHkoICcotW/lbifiC6sXX4RWm4Z3dKvnqVkUZmqGDkAPqepDIos87dX0aY8DVZXSFs=
       addons:
         apt_packages:
-          - pandoc
     - name: Python 3.6
       python: 3.6
       env: TOXENV=py36-test
