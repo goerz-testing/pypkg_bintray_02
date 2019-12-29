@@ -2,7 +2,7 @@
 PyPkg Bintray 02
 ================
 
-.. image:: https://img.shields.io/badge/github-goerz--testing/pypkg_bintray_02-blue.svg
+.. image:: https://img.shields.io/badge/github-goerz--testing/pypkg__bintray__02-blue.svg
    :alt: Source code on Github
    :target: https://github.com/goerz-testing/pypkg_bintray_02
 
@@ -14,9 +14,9 @@ PyPkg Bintray 02
    :alt: Travis Continuous Integration
    :target: https://travis-ci.org/goerz-testing/pypkg_bintray_02
 
-.. image:: https://img.shields.io/badge/appveyor-no%20id-red.svg
+.. image:: https://ci.appveyor.com/api/projects/status/7post2n3s9bl27uq?svg=true
    :alt: AppVeyor Continuous Integration
-   :target: https://ci.appveyor.com/project/goerz-testing/pypkg-bintray-02
+   :target: https://ci.appveyor.com/project/goerz/pypkg-bintray-02
 
 .. image:: https://codecov.io/gh/goerz-testing/pypkg_bintray_02/branch/master/graph/badge.svg
    :alt: Codecov
