@@ -1,7 +1,7 @@
 Welcome to PyPkg Bintray 02's documentation!
 ============================================
 
-.. image:: https://img.shields.io/badge/github-goerz-testing/pypkg__bintray__02-blue.svg
+.. image:: https://img.shields.io/badge/github-goerz--testing/pypkg__bintray__02-blue.svg
    :alt: Source code on Github
    :target: https://github.com/goerz-testing/pypkg_bintray_02
 
@@ -32,7 +32,7 @@ Welcome to PyPkg Bintray 02's documentation!
    readme
    contributing
    history
-   
+
 
 
 API
