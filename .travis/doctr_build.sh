@@ -52,7 +52,7 @@ if [ ! -z "$TRAVIS_TAG" ]; then
     # will then later transfer those links into versions.json
 
     echo "### [zip]"
-    cp -r docs/_build/html docs/_build/pypkg_bintray_02-$TRAVIS_TAG
+    cp -r docs/_build/html "docs/_build/pypkg_bintray_02-$TRAVIS_TAG"
     cd docs/_build || exit 1
     zip -r "pypkg_bintray_02-$TRAVIS_TAG.zip" "pypkg_bintray_02-$TRAVIS_TAG"
     rm -rf "pypkg_bintray_02-$TRAVIS_TAG"
