@@ -37,7 +37,7 @@ tox -e docs
 
 if [ ! -z "$TRAVIS_TAG" ]; then
 
-    echo "Deploying as TAG $TRAVIS_TAG"
+    echo "Building as TAG $TRAVIS_TAG"
 
     echo "## Generate documentation downloads"
     # We generate documentation downloads only for tags (which are assumed to
@@ -97,7 +97,7 @@ if [ ! -z "$TRAVIS_TAG" ]; then
 
 elif [ ! -z "$TRAVIS_BRANCH" ]; then
 
-    echo "Deploying as BRANCH $TRAVIS_BRANCH"
+    echo "Building as BRANCH $TRAVIS_BRANCH"
 
 else
 
@@ -125,6 +125,8 @@ if [ ! -z "$TRAVIS" ] && [ "$TRAVIS_EVENT_TYPE" != "pull_request" ]; then
             --command="git show $TRAVIS_COMMIT:.travis/doctr_post_process.py > post_process.py && git show $TRAVIS_COMMIT:.travis/versions.py > versions.py && python post_process.py" \
             --built-docs docs/_build/html --no-require-master --build-tags "$DEPLOY_DIR"
     fi
+else
+    echo "Not deploying to gh-pages (PR or not on Travis)"
 fi
 
 echo "# DOCTR - DONE"
