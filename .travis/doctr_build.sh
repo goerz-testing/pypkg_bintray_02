@@ -116,7 +116,7 @@ if [ ! -z "$TRAVIS" ]; then
         DEPLOY_DIR="$TRAVIS_TAG"
     else
         case "$TRAVIS_BRANCH" in
-            master|develop) DEPLOY_DIR="$TRAVIS_BRANCH";;
+            master|develop|mybranch2) DEPLOY_DIR="$TRAVIS_BRANCH";;
             *)      echo "Not deploying branch $TRAVIS_BRANCH";;
         esac
     fi
