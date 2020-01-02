@@ -10,7 +10,7 @@
 
 echo "# DOCTR - deploy documentation"
 
-if [ ! -z "$TRAVIS" ]; then
+if [ ! -z "$TRAVIS" ] && [ "$TRAVIS_EVENT_TYPE" != "pull_request" ]; then
     echo "## Check bintray status"
     # We *always* do this check: we don't just want to find out about
     # authentication errors when making a release
@@ -63,7 +63,7 @@ if [ ! -z "$TRAVIS_TAG" ]; then
     tox -e docs -- -b epub _build/epub
     mv docs/_build/epub/*.epub "docs/_build/artifacts/pypkg_bintray_02-$TRAVIS_TAG.epub"
 
-    if [ ! -z "$TRAVIS" ]; then
+    if [ ! -z "$TRAVIS" ] && [ "$TRAVIS_EVENT_TYPE" != "pull_request" ]; then
 
         # upload to bintray
         # Depends on $BINTRAY_USER, $BINTRAY_SUBJECT, $BINTRAY_REPO, $BINTRAY_PACKAGE, and secret $BINTRAY_TOKEN from .travis.yml
@@ -108,7 +108,7 @@ else
 fi
 
 # Deploy
-if [ ! -z "$TRAVIS" ]; then
+if [ ! -z "$TRAVIS" ] && [ "$TRAVIS_EVENT_TYPE" != "pull_request" ]; then
     echo "## pip install doctr"
     python -m pip install doctr
     echo "## doctr deploy"
