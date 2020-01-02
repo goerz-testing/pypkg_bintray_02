@@ -115,11 +115,16 @@ if [ ! -z "$TRAVIS" ]; then
     if [ ! -z "$TRAVIS_TAG" ]; then
         DEPLOY_DIR="$TRAVIS_TAG"
     else
-        DEPLOY_DIR="$TRAVIS_BRANCH"
+        case "$TRAVIS_BRANCH" in
+            master|develop) DEPLOY_DIR="$TRAVIS_BRANCH";;
+            *)      echo "Not deploying branch $TRAVIS_BRANCH";;
+        esac
     fi
-    python -m doctr deploy --key-path docs/doctr_deploy_key.enc \
-        --command="git show $TRAVIS_COMMIT:.travis/doctr_post_process.py > post_process.py && git show $TRAVIS_COMMIT:.travis/versions.py > versions.py && python post_process.py" \
-        --built-docs docs/_build/html --no-require-master --build-tags "$DEPLOY_DIR"
+    if [ ! -z "$DEPLOY_DIR" ]; then
+        python -m doctr deploy --key-path docs/doctr_deploy_key.enc \
+            --command="git show $TRAVIS_COMMIT:.travis/doctr_post_process.py > post_process.py && git show $TRAVIS_COMMIT:.travis/versions.py > versions.py && python post_process.py" \
+            --built-docs docs/_build/html --no-require-master --build-tags "$DEPLOY_DIR"
+    fi
 fi
 
 echo "# DOCTR - DONE"
