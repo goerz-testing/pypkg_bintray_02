@@ -173,9 +173,6 @@ in coordination with the project maintainer).  If something goes wrong with any
 advanced "history rewriting", there is always `"git reflog"`_ as a safety net
 -- you will never lose work that was committed before.
 
-It's not clear if there is a problem with secret variables in ``.travis.yml``
-when making pull requests. This will have to be tested.
-
 When you are done with a topic branch (the issue has been fixed), finish up by
 merging the topic branch back into ``master``::
 
