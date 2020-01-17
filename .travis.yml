@@ -36,7 +36,7 @@ matrix:
 install:
   # any failure stops the build
   - set -e
-  - pip install tox
+  - pip install tox zip-files
   - pip freeze
   - printenv
 script:

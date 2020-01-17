@@ -52,6 +52,7 @@ dev_requirements = [
     'travis-encrypt',
     'twine',
     'wheel',
+    'zip-files',
 ]
 
 if sys.version_info >= (3, 6):
@@ -73,9 +74,7 @@ setup(
         'Programming Language :: Python :: 3.9',
         'Natural Language :: English',
     ],
-    description=(
-        "Python packaging test with Doctr and Binstar artifacts"
-    ),
+    description=("Python packaging test with Doctr and Binstar artifacts"),
     python_requires='>=3.6',
     install_requires=requirements,
     extras_require={'dev': dev_requirements},
