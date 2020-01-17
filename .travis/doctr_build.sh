@@ -52,7 +52,7 @@ if [ ! -z "$TRAVIS_TAG" ]; then
     # will then later transfer those links into versions.json
 
     echo "### [zip]"
-    zip-folder -f "pypkg_bintray_02-$TRAVIS_TAG" -o "docs/_build/artifacts/pypkg_bintray_02-$TRAVIS_TAG.zip" docs/_build/html
+    zip-folder --debug -a  -o "docs/_build/artifacts/pypkg_bintray_02-$TRAVIS_TAG.zip" docs/_build/html
 
     echo "### [epub]"
     tox -e docs -- -b epub _build/epub
